@@ -1,0 +1,69 @@
+{
+  "crm_id": 271,
+  "slug": "brookland",
+  "name": "Brookland",
+  "niche": "Детейлинг",
+  "city": "Ташкент",
+  "phone": "+998999888000",
+  "address": "Ресторан, детейлинг",
+  "maps_url": "https://yandex.ru/maps/org/brookland/116112604844/",
+  "rating": 5.0,
+  "reviews_count": 913,
+  "socials": {
+    "facebook": "https://facebook.com/brooklanduzb",
+    "instagram": "https://instagram.com/brookland_uzb",
+    "telegram": "https://t.me/+998999888000"
+  },
+  "working_hours_ru": "Ежедневно 09:00 - 20:00",
+  "working_hours_uz": "Har kuni 09:00 - 20:00",
+  "content_ru": {
+    "h1": "Brookland в Ташкент",
+    "subtitle": "Качественные услуги с гарантией результата.",
+    "trust_points": [
+      "Высокий рейтинг 5.0 ★ на основе 913 отзывов",
+      "Опытные мастера и гарантия на работу",
+      "Удобная онлайн-запись через Telegram без звонков"
+    ]
+  },
+  "content_uz": {
+    "h1": "Brookland — Ташкентda",
+    "subtitle": "Kafolatlangan sifatli xizmatlar.",
+    "trust_points": [
+      "913 ta mijoz fikri asosida yuqori 5.0 ★ reyting",
+      "Tajribali ustalar va kafolatlangan xizmat",
+      "Telegram orqali qulay navbatsiz yozilish"
+    ]
+  },
+  "services_ru": [
+    {
+      "name": "Базовая услуга",
+      "price": "уточняйте по телефону"
+    },
+    {
+      "name": "Комплексное обслуживание",
+      "price": "уточняйте по телефону"
+    }
+  ],
+  "services_uz": [
+    {
+      "name": "Asosiy xizmat",
+      "price": "telefon orqali aniqlashtiring"
+    },
+    {
+      "name": "Kafolatlangan to'liq xizmat",
+      "price": "telefon orqali aniqlashtiring"
+    }
+  ],
+  "reviews_ru": [
+    {
+      "author": "Клиент с карт",
+      "text": "Отличный сервис, вежливый персонал и высокое качество работы! Рекомендую."
+    }
+  ],
+  "reviews_uz": [
+    {
+      "author": "Xaritalar mijozi",
+      "text": "A'lo darajadagi servis, xushmuomala xodimlar va sifatli ish! Tavsiya qilaman."
+    }
+  ]
+}

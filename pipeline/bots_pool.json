@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "bot_username": "AutoDemoBooking1_bot",
+    "bot_token": "YOUR_BOT_TOKEN_HERE_1",
+    "status": "assigned:tashkent-auto-pro",
+    "assigned_to": "tashkent-auto-pro"
+  },
+  {
+    "id": 2,
+    "bot_username": "AutoDemoBooking2_bot",
+    "bot_token": "YOUR_BOT_TOKEN_HERE_2",
+    "status": "available",
+    "assigned_to": null
+  },
+  {
+    "id": 3,
+    "bot_username": "ServiceBookingDemo_bot",
+    "bot_token": "YOUR_BOT_TOKEN_HERE_3",
+    "status": "available",
+    "assigned_to": null
+  }
+]
