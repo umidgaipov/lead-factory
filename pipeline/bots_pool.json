@@ -10,8 +10,8 @@
     "id": 2,
     "bot_username": "AutoDemoBooking2_bot",
     "bot_token": "YOUR_BOT_TOKEN_HERE_2",
-    "status": "available",
-    "assigned_to": null
+    "status": "assigned:brookland",
+    "assigned_to": "brookland"
   },
   {
     "id": 3,

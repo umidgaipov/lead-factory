@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>{{BUSINESS_NAME}} — {{CITY}}</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container nav-content">
+      <div class="brand">
+        <span class="brand-name">{{BUSINESS_NAME}}</span>
+        <span class="city-badge">{{CITY}}</span>
+      </div>
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switch">
+          <button id="btn-ru" class="lang-btn active" onclick="switchLang('ru')">RU</button>
+          <button id="btn-uz" class="lang-btn" onclick="switchLang('uz')">UZ</button>
+        </div>
+        <a href="tel:{{PHONE_CLEAN}}" class="phone-link">{{PHONE}}</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      <div class="rating-pill">
+        <span class="stars">★★★★★</span>
+        <span class="rating-val">{{RATING}}</span>
+        <span class="reviews-count">({{REVIEWS_COUNT}} <span class="lang-text" data-ru="отзывов" data-uz="ta sharh">отзывов</span>)</span>
+      </div>
+
+      <h1 class="hero-title lang-text" data-ru="{{H1_RU}}" data-uz="{{H1_UZ}}">{{H1_RU}}</h1>
+      <p class="hero-subtitle lang-text" data-ru="{{SUBTITLE_RU}}" data-uz="{{SUBTITLE_UZ}}">{{SUBTITLE_RU}}</p>
+
+      <div class="hero-cta-group">
+        <a href="https://t.me/{{BOT_USERNAME}}" target="_blank" class="btn btn-primary">
+          <span class="btn-icon">⚡</span>
+          <span class="lang-text" data-ru="Записаться онлайн" data-uz="Onlayn yozilish">Записаться онлайн</span>
+        </a>
+        <a href="tel:{{PHONE_CLEAN}}" class="btn btn-secondary">
+          <span class="btn-icon">📞</span>
+          <span class="lang-text" data-ru="Позвонить" data-uz="Qo'ng'iroq qilish">Позвонить</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Points Section -->
+  <section class="section trust-section">
+    <div class="container">
+      <h2 class="section-title lang-text" data-ru="За что нас выбирают" data-uz="Nega bizni tanlashadi">За что нас выбирают</h2>
+      <div class="trust-grid">
+        {{TRUST_POINTS_HTML}}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services & Prices Section -->
+  <section class="section services-section">
+    <div class="container">
+      <h2 class="section-title lang-text" data-ru="Услуги и стоимость" data-uz="Xizmatlar va narxlar">Услуги и стоимость</h2>
+      <div class="services-list">
+        {{SERVICES_HTML}}
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Reviews Section -->
+  <section class="section reviews-section">
+    <div class="container">
+      <div class="section-header-row">
+        <h2 class="section-title lang-text" data-ru="Честные отзывы клиентов" data-uz="Mijozlarimizning samimiy fikrlari">Честные отзывы клиентов</h2>
+        <a href="{{MAPS_URL}}" target="_blank" class="maps-source-link lang-text" data-ru="Все отзывы на картах →" data-uz="Xaritadagi barcha sharhlar →">Все отзывы на картах →</a>
+      </div>
+      <div class="reviews-grid">
+        {{REVIEWS_HTML}}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacts & Map Section -->
+  <section class="section contacts-section">
+    <div class="container contacts-card">
+      <h2 class="section-title lang-text" data-ru="Контакты и график" data-uz="Aloqa va ish tartibi">Контакты и график</h2>
+      <div class="contacts-info">
+        <p><strong>📍 <span class="lang-text" data-ru="Адрес:" data-uz="Manzil:">Адрес:</span></strong> {{ADDRESS}}</p>
+        <p><strong>🕒 <span class="lang-text" data-ru="Режим работы:" data-uz="Ish vaqti:">Режим работы:</span></strong> <span class="lang-text" data-ru="{{WORKING_HOURS_RU}}" data-uz="{{WORKING_HOURS_UZ}}">{{WORKING_HOURS_RU}}</span></p>
+        <p><strong>📞 <span class="lang-text" data-ru="Телефон:" data-uz="Telefon:">Телефон:</span></strong> <a href="tel:{{PHONE_CLEAN}}">{{PHONE}}</a></p>
+      </div>
+      <div class="map-action">
+        <a href="{{MAPS_URL}}" target="_blank" class="btn btn-outline lang-text" data-ru="Открыть в Яндекс / Google Картах" data-uz="Xaritada ochish">Открыть в Картах</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Mobile Action Bar -->
+  <div class="mobile-sticky-bar">
+    <a href="tel:{{PHONE_CLEAN}}" class="sticky-btn sticky-call">
+      <span>📞</span> <span class="lang-text" data-ru="Позвонить" data-uz="Qo'ng'iroq">Позвонить</span>
+    </a>
+    <a href="https://t.me/{{BOT_USERNAME}}" target="_blank" class="sticky-btn sticky-tg">
+      <span>⚡</span> <span class="lang-text" data-ru="Запись в Telegram" data-uz="Telegramda yozilish">Запись в Telegram</span>
+    </a>
+  </div>
+
+  <!-- Safety Demo Disclaimer -->
+  <footer class="demo-footer">
+    <div class="container">
+      <p class="lang-text" data-ru="Демонстрационный концепт. Не является публичной офертой. Удалим по первому требованию владельца." data-uz="Namoyish konsepsiyasi. Ommaviy oferta hisoblanmaydi. Egasi talabiga ko'ra darhol o'chiriladi.">Демонстрационный концепт. Не является публичной офертой. Удалим по первому требованию владельца.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

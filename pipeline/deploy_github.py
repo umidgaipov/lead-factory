@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 Lead Factory - GitHub Pages Deployer
-Pushes generated sites to GitHub repository and generates live preview URL.
+Pushes generated sites to GitHub repository gh-pages branch.
+Provides live preview URL for sales calls and messengers.
 """
 
 import sys
@@ -21,29 +22,13 @@ if sys.platform == "win32":
 
 SITES_DIR = Path("D:/Work/сайты")
 GITHUB_USER = "umidgaipov"
-REPO_NAME = "lead-factory-sites"
+REPO_NAME = "lead-factory"
+BRANCH = "gh-pages"
 
 def run_git(args, cwd=SITES_DIR):
     cmd = ["git"] + args
     res = subprocess.run(cmd, cwd=str(cwd), capture_output=True, text=True, encoding="utf-8", errors="replace")
     return res
-
-def ensure_repo_initialized(remote_url=None):
-    if not SITES_DIR.exists():
-        SITES_DIR.mkdir(parents=True, exist_ok=True)
-    
-    # Check if git is initialized
-    if not (SITES_DIR / ".git").exists():
-        print("Инициализация git в D:/Work/сайты...")
-        run_git(["init", "-b", "main"])
-    
-    # Check remote
-    remotes = run_git(["remote", "-v"]).stdout
-    if "origin" not in remotes:
-        if not remote_url:
-            remote_url = f"git@github.com:{GITHUB_USER}/{REPO_NAME}.git"
-        run_git(["remote", "add", "origin", remote_url])
-        print(f"Привязан remote: {remote_url}")
 
 def deploy_site(slug):
     slug_dir = SITES_DIR / slug
@@ -51,16 +36,13 @@ def deploy_site(slug):
         print(f"❌ Ошибка: папка сайта не найдена: {slug_dir}")
         return None
 
-    ensure_repo_initialized()
-
-    print(f"🚀 Деплой сайта [{slug}] на GitHub...")
+    print(f"🚀 Деплой сайта [{slug}] на GitHub Pages (ветка {BRANCH})...")
     run_git(["add", slug])
     run_git(["commit", "-m", f"Deploy demo site for {slug}"])
     
-    push_res = run_git(["push", "-u", "origin", "main"])
+    push_res = run_git(["push", "origin", BRANCH])
     if push_res.returncode != 0 and "Everything up-to-date" not in push_res.stderr:
-        # Try pushing without -u if branch already exists
-        push_res = run_git(["push", "origin", "main"])
+        print(f"⚠️ Предупреждение git push:\n{push_res.stderr}")
 
     live_url = f"https://{GITHUB_USER}.github.io/{REPO_NAME}/{slug}/"
     print(f"\n🎉 САЙТ ОПУБЛИКОВАН!")
@@ -73,4 +55,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     deploy_site(args.slug)
-
