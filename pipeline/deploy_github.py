@@ -36,6 +36,18 @@ def deploy_site(slug):
         print(f"❌ Ошибка: папка сайта не найдена: {slug_dir}")
         return None
 
+    live_url = f"https://{GITHUB_USER}.github.io/{REPO_NAME}/{slug}/"
+
+    # Inject live URL into звонок.md if present
+    sales_card = slug_dir / "звонок.md"
+    if sales_card.exists():
+        with open(sales_card, "r", encoding="utf-8") as f:
+            content = f.read()
+        content = content.replace("(Ссылка на сайт)", live_url)
+        content = content.replace("file:///", f"Живой сайт: {live_url}\n- Локальный: file:///")
+        with open(sales_card, "w", encoding="utf-8") as f:
+            f.write(content)
+
     print(f"🚀 Деплой сайта [{slug}] на GitHub Pages (ветка {BRANCH})...")
     run_git(["add", slug])
     run_git(["commit", "-m", f"Deploy demo site for {slug}"])
@@ -44,7 +56,6 @@ def deploy_site(slug):
     if push_res.returncode != 0 and "Everything up-to-date" not in push_res.stderr:
         print(f"⚠️ Предупреждение git push:\n{push_res.stderr}")
 
-    live_url = f"https://{GITHUB_USER}.github.io/{REPO_NAME}/{slug}/"
     print(f"\n🎉 САЙТ ОПУБЛИКОВАН!")
     print(f"🌐 Ссылка: {live_url}")
     return live_url
